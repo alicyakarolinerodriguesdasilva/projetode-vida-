@@ -90,4 +90,89 @@
     </script>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Procurar por Vizinhança</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Estilo do Botão */
+        .btn-procurar {
+            background-color: #2563EB;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-procurar:hover {
+            background-color: #1D4ED8;
+        }
+
+        /* Container dos campos (inicialmente escondido) */
+        .container-campos {
+            display: none; /* Esconde os elementos */
+            margin-top: 15px;
+        }
+
+        /* Estilo dos parágrafos com campo de texto */
+        .campo-grupo {
+            margin-bottom: 10px;
+        }
+
+        .campo-grupo label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .campo-grupo input {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn-procurar" onclick="mostrarCampos()">Procurar por vizinhança</button>
+
+    <div id="camposVizinhanca" class="container-campos">
+        <p class="campo-grupo">
+            <label for="local1">Local 1:</label>
+            <input type="text" id="local1" placeholder="Digite o nome do primeiro local">
+        </p>
+
+        <p class="campo-grupo">
+            <label for="local2">Local 2:</label>
+            <input type="text" id="local2" placeholder="Digite o nome do segundo local">
+        </p>
+
+        <p class="campo-grupo">
+            <label for="local3">Local 3:</label>
+            <input type="text" id="local3" placeholder="Digite o nome do terceiro local">
+        </p>
+    </div>
+
+    <script>
+        function mostrarCampos() {
+            // Seleciona a div que contém os três parágrafos
+            const container = document.getElementById('camposVizinhanca');
+            
+            // Altera o estilo para exibir os campos na tela
+            container.style.display = 'block';
+        }
+    </script>
+
+</body>
 </html>
