@@ -1,68 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus objetivos do ano</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <section class="conteudo-principal">
-        <h2 class="titulo-principal">Meus Objetivos do ano<span>_</span></h2>
-        <div class="botoes">
-            <button class="botao">procurar animal perdido</button>
-            <button class="botao">regiao do desaparecimento</button>
-            <button class="botao">localiar por chip</button>
-            <button class="botao">eu encontrei</button>
-        </div>
-    </section>
-</body>
-
-</html><!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <button class="meu-botao" onclick="mostrarAlerta()">Clique em mim!</button>
-
-<script.
-    }
-</script><button class="meu-botao" onclick="mostrarAlerta()">Clique em mim!</button>
-
-<script>
-    function mostrarAlerta() {
-        alert("Você clicou no botão!");
-    }
-</script>.
-}<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Exemplo de Botão</title>
+    <title>Procurar Animal Perdido</title>
     <style>
-        /* Estilização do Botão */
-        .meu-botao {
-            background-color: #007bff; /* Cor de fundo (Azul) */
-            color: white;              /* Cor do texto */
-            padding: 12px 24px;        /* Espaçamento interno (cima/baixo, esquerda/direita) */
-            border: none;              /* Remove a borda padrão */
-            border-radius: 6px;        /* Arredonda as pontas */
-            font-size: 16px;           /* Tamanho do texto */
-            cursor: pointer;           /* Muda o ponteiro do mouse ao passar por cima */
-            transition: background 0.3s; /* Suaviza a troca de cor */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        /* Efeito quando passa o mouse por cima */
-        .meu-botao:hover {
-            background-color: #0056b3; /* Azul mais escuro */
+        /* Estilo do Botão */
+        .btn-procurar {
+            background-color: #2563EB;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .btn-procurar:hover {
+            background-color: #1D4ED8;
+        }
+
+        /* Estilo dos campos que vão aparecer */
+        .campo-animal {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #F3F4F6;
+            border-radius: 6px;
+            border-left: 4px solid #2563EB;
+        }
+
+        .campo-animal p {
+            margin: 0 0 8px 0;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        .campo-animal input {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <button class="meu-botao">Clique Aqui</button>
+    <button class="btn-procurar" onclick="mostrarCampos()">Procurar Animal Perdido</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarCampos() {
+            const conteiner = document.getElementById('resultado');
+
+            // Limpa o conteúdo anterior para não duplicar se clicar de novo
+            conteiner.innerHTML = '';
+
+            // Dados dos 3 campos
+            const campos = [
+                { label: 'Digite o nome do primeiro animal:', placeholder: 'Ex: Rex' },
+                { label: 'Digite o nome do segundo animal:', placeholder: 'Ex: Thor' },
+                { label: 'Digite o nome do terceiro animal:', placeholder: 'Ex: Mel' }
+            ];
+
+            // Cria os 3 parágrafos com campo de texto
+            campos.forEach((campo, index) => {
+                const div = document.createElement('div');
+                div.className = 'campo-animal';
+
+                div.innerHTML = `
+                    <p>Parágrafo ${index + 1}: ${campo.label}</p>
+                    <input type="text" placeholder="${campo.placeholder}">
+                `;
+
+                conteiner.appendChild(div);
+            });
+        }
+    </script>
 
 </body>
 </html>
-    
